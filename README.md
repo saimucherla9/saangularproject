@@ -34,7 +34,10 @@ npm install -g npm@9.6.5 (command to upgrade to the latest version of NPM)
 
 ng g c loginpage (command to generate the component for login page, we planned to separate it)
 
+-- Creating the login page with Angualr Material
 
+First to add material, use below command 
+ng add @angular/material --save ( it is added in the angular.json)
 
 
 
