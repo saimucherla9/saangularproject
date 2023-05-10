@@ -14,3 +14,8 @@
 .loginform p .loginbutton{
   margin-right: 5px;
 }
+
+.usernameclass, .passwordclass{
+  color: red;
+  background-color: pink;
+}

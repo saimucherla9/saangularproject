@@ -1,21 +1,28 @@
 <div class="loginform">
   <fieldset>
     <legend>Login</legend>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>User Name</mat-label>
-        <input matInput type="text" placeholder="Placeholder">
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" placeholder="Placeholder">
-      </mat-form-field>
-    </p>
-    <p>
-      <button class="loginbutton" mat-raised-button color="primary">Login</button>
-      <button mat-raised-button color="warn">Cancel</button>
-    </p>
+      <form #commongroup="ngForm" (ngSubmit)="submit(commongroup)">
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput type="text" ngModel name="userName" #userName="ngModel" pattern="admin" placeholder="user name">
+          </mat-form-field>
+        </p>
+        <span class="usernameclass" *ngIf="userName.value && userName.value != 'admin' ">Invalid user name </span>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" ngModel name="password" #password="ngModel" pattern="saadmin9" placeholder="password">
+          </mat-form-field>
+        </p>
+        <span class="passwordclass" *ngIf="password.value && password.value != 'saadmin9' ">Invalid password </span>
+        <p>
+          <button class="loginbutton"
+            [disabled]=" !(commongroup.value.userName == 'admin' && commongroup.value.password == 'saadmin9')"
+            mat-raised-button
+            color="primary">Login</button>
+          <button mat-raised-button color="warn">Cancel</button>
+        </p>
+      </form>
   </fieldset>
 </div>

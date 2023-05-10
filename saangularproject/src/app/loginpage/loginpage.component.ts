@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class LoginpageComponent {
 
+  submit(loginBtn: any) {
+    console.log(loginBtn);
+    // return loginBtn.groupForm.
+  }
+
+
 }
