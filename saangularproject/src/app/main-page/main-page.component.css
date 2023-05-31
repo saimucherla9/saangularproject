@@ -1,0 +1,10 @@
+.main-container {
+    width: 140vh;
+    height: 100vh;
+    border: 3px solid rgb(56, 55, 55);
+}
+
+br {
+    background-color: black;
+    height: 10px;
+}
