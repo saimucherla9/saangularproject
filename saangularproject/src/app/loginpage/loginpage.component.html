@@ -1,7 +1,7 @@
 <div class="loginform">
   <fieldset>
     <legend>Login</legend>
-      <form #commongroup="ngForm" (ngSubmit)="submit(commongroup)">
+      <form #commongroup="ngForm" (onSubmit)="submit(commongroup)">
         <p>
           <mat-form-field appearance="fill">
             <mat-label>User Name</mat-label>
@@ -18,9 +18,11 @@
         <span class="passwordclass" *ngIf="password.value && password.value != 'saadmin9' ">Invalid password </span>
         <p>
           <button class="loginbutton"
-            [disabled]=" !(commongroup.value.userName == 'admin' && commongroup.value.password == 'saadmin9')"
             mat-raised-button
-            color="primary">Login</button>
+            color="primary"
+            [disabled]="enableLoginBtn(commongroup)"
+            routerLink="/mainpage"
+          >Login</button>
           <button mat-raised-button color="warn">Cancel</button>
         </p>
       </form>
